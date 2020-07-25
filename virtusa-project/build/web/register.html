@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Register !</title>
+    <link rel="icon" href="../images/icon17.svg">
+  </head>
+  <body class="bg-dark">
+    <div class="container border bg-secondary font-weight-bold" style="margin:5%;">
+        <h2 class="text-danger">Registration Page</h2><br/>
+        <form method="POST" enctype='multipart/form-data' action="register/auth" style="padding:1%;">
+            <div class="form-group">
+              <label for="fname">First name</label>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last name</label>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email"  class="form-control" id="email" name="email" placeholder="Enter Email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="number" pattern="[0-9]{10}" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="uname" >Choose Username</label>
+                <input type="text" pattern="[a-z0-9]{5+}" class="form-control" id="uname" name="uname" placeholder="Enter Username" required>
+            </div>
+            <div class="form-group">
+              <label for="pass">Password</label>
+              <input type="password" pattern=".{8+}" class="form-control" id="pass" name="upass" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="aaddhaar">Aadhaar Card No. :</label>
+                <input type="number" pattern="[0-9]{16}" class="form-control" id="uidai" name="uidai" placeholder="Enter Aadhaar Number(16-Digit)" required>
+            </div>
+            <div class="form-group">
+                <label for="Document">Upload File(Aadhaar Card)</label>
+                <input type="file" id="document" name="document" accept="image/*" required>
+                <p class="font-weight-light">We'll never share your details with anyone else.</p>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+              <label class="form-check-label" for="exampleCheck1">I hereby declare that all details above mentioned are
+                  true to my utmost knowledge ,I'm solemnly resposible for any misplacing or fraud activity of the above
+                  details.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-danger">Sign Up</button>
+            <a href="login"><input type="button" class="btn btn-danger" value="Log In!"></a>
+          </form>
+    </div>
+    <script src="script.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

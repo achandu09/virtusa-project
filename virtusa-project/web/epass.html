@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ePass</title>
+    <link rel="icon" href="../images/icon17.svg">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+
+  </head>
+  <body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><i class="fa fa-quote-left"></i> ePass-Covid <i class="fa fa-quote-right"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="home"><i class="fa fa-home" ></i> Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about"><i class="fa fa-info"></i> About Us </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><i class="fa fa-ticket"></i> Get ePass <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-ellipsis-v"></i>  Options
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="profile"><i class="fa fa-user"></i> Profile</a>
+                  <a class="dropdown-item" href="history"><i class="fa fa-history"></i> History</a>
+                <a class="dropdown-item" href="logout"><i class="fa fa-sign-out" ></i> Log Out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+      <div class="container">
+          <br/>
+          <marquee><h5 class="text-danger">Temporarily we are only available for TG , we will make sure to spread our service across the country.</h5></marquee>
+      </div>
+      <div class="container border bg-secondary p-4">
+          <form method="get" action="sample">
+          <div class="row">
+              <div class="col">
+                  <h2>ePass (Telangana)</h2>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <p id="warning"></p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-4">
+                  <label><h5>From: </h5></label>
+                    <div class="form-group">
+                        <select class="form-control" id="from" name="from" required>
+                          <option value="Adilabad">Adilabad</option>
+                          <option value="Komaram Bheem">Komaram Bheem</option>
+                          <option value="Bhadradri">Bhadradri</option>
+                          <option value="Hyderabad">Hyderabad</option>
+                          <option value="Jagtial">Jagtial</option>
+                          <option value="Jangaon">Jangaon</option>
+                          <option value="Jayashankar">Jayashankar Bhupalpally</option>
+                          <option value="Jogulamba">Jogulamba Gadwal</option>
+                          <option value="Kamareddy">Kamareddy</option>
+                          <option value="Karimnagar">Karimnagar</option>
+                          <option value="Khammam">Khammam</option>
+                          <option value="Mahabubabad">Mahabubabad</option>
+                          <option value="Mahbubnagar">Mahbubnagar</option>
+                          <option value="Mancherial">Mancherial</option>
+                          <option value="Medak">Medak</option>
+                          <option value="Medchal">Medchal-Malkajgiri</option>
+                          <option value="Mulugu">Mulugu</option>
+                          <option value="Nagarkurnool">Nagarkurnool</option>
+                          <option value="Nalgonda">Nalgonda</option>
+                          <option value="Narayanapet">Narayanapet</option>
+                          <option value="Nirmal">Nirmal</option>
+                          <option value="Nizamabad">Nizamabad</option>
+                          <option value="Peddapalli">Peddapalli</option>
+                          <option value="Sircilla">Rajanna Sircilla</option>
+                          <option value="RR">Ranga Reddy</option>
+                          <option value="Sangareddy">Sangareddy</option>
+                          <option value="Siddipet">Siddipet</option>
+                          <option value="Suryapet">Suryapet</option>
+                          <option value="Vikarabad">Vikarabad</option>
+                          <option value="Wanaparthy">Wanaparthy</option>
+                          <option value="Warangal_R">Warangal (Rural)</option>
+                          <option value="Warangal_U">Warangal (Urban)</option>
+                          <option value="Yadadri">Yadadri</option>
+                        </select>
+                    </div>
+              </div>
+              <div class="col-sm-4">
+                  <label><h5>To: </h5></label>
+                    <div class="form-group">
+                        <select class="form-control" id="to" name="to" size="1" required>
+                          <option value="Adilabad">Adilabad</option>
+                          <option value="Komaram Bheem">Komaram Bheem</option>
+                          <option value="Bhadradri">Bhadradri</option>
+                          <option value="Hyderabad">Hyderabad</option>
+                          <option value="Jagtial">Jagtial</option>
+                          <option value="Jangaon">Jangaon</option>
+                          <option value="Jayashankar">Jayashankar Bhupalpally</option>
+                          <option value="Jogulamba">Jogulamba Gadwal</option>
+                          <option value="Kamareddy">Kamareddy</option>
+                          <option value="Karimnagar">Karimnagar</option>
+                          <option value="Khammam">Khammam</option>
+                          <option value="Mahabubabad">Mahabubabad</option>
+                          <option value="Mahbubnagar">Mahbubnagar</option>
+                          <option value="Mancherial">Mancherial</option>
+                          <option value="Medak">Medak</option>
+                          <option value="Medchal">Medchal-Malkajgiri</option>
+                          <option value="Mulugu">Mulugu</option>
+                          <option value="Nagarkurnool">Nagarkurnool</option>
+                          <option value="Nalgonda">Nalgonda</option>
+                          <option value="Narayanapet">Narayanapet</option>
+                          <option value="Nirmal">Nirmal</option>
+                          <option value="Nizamabad">Nizamabad</option>
+                          <option value="Peddapalli">Peddapalli</option>
+                          <option value="Sircilla">Rajanna Sircilla</option>
+                          <option value="RR">Ranga Reddy</option>
+                          <option value="Sangareddy">Sangareddy</option>
+                          <option value="Siddipet">Siddipet</option>
+                          <option value="Suryapet">Suryapet</option>
+                          <option value="Vikarabad">Vikarabad</option>
+                          <option value="Wanaparthy">Wanaparthy</option>
+                          <option value="Warangal_R">Warangal (Rural)</option>
+                          <option value="Warangal_U">Warangal (Urban)</option>
+                          <option value="Yadadri">Yadadri</option>
+                        </select>
+                    </div>
+              </div>
+              <div class="col-sm-4">
+                  <label><h5>Date: </h5></label>
+                  <input class="form-control" type="date" name="date" required>
+              </div>
+          </div>
+              <div class="row"></div>
+              <div class="row justify-content-center">
+                  <div class="col-sm-3">
+                      <br />
+                      <input class="btn btn-danger form-control" type="submit" value="Get Pass!">
+                  </div>
+              </div>
+          </form>
+      </div>
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
