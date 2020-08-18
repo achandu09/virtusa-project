@@ -52,6 +52,7 @@ public class history extends HttpServlet {
                 "                <th scope=\"col\">From</th>\n" +
                 "                <th scope=\"col\">To</th>\n" +
                 "                <th scope=\"col\">Date</th>\n" +
+                "                <th scope=\"col\">Unique Id</th>\n" +
                 "              </tr>\n" +
                 "            </thead>\n" +          
 
@@ -67,21 +68,23 @@ public class history extends HttpServlet {
 		  conn = java.sql.DriverManager.getConnection(url,userName,password);
 		  //out.print("Connected to the database");
                   Statement st = conn.createStatement();
-                  String q="select * from trav_history where usern=\""+uname+"\"";
+                  String q="select * from valid where uname=\""+uname+"\" order by trav_date desc";
                   ResultSet rs=st.executeQuery(q);
                   int i=0;
                   while(rs.next()){
                       i++;
                       flag=true;
-                      String from=rs.getString("from_src");
-                      String to=rs.getString("to_dest");
-                      String date=rs.getString("date_trav");
+                      String from=rs.getString("src");
+                      String to=rs.getString("dest");
+                      String date=rs.getString("trav_date");
+                      String id=rs.getString("id");
                       out.print(
                         "    <tr>\n" +
                         "      <th scope=\"row\">"+i+"</th>\n" +
                         "      <td>"+from+"</td>\n" +
                         "      <td>"+to+"</td>\n" +
                         "      <td>"+date+"</td>\n" +
+                        "      <td>"+id+"</td>\n" +        
                         "    </tr>\n" +
                         "    <tr>\n" );
                   }

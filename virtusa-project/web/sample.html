@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="bg-secondary"> 
+    <div class="container-fluid border p-3">
+        <div class="row justify-content-center">
+           <h6 id="head">e-Pass(COVID-19)</h6>
+        </div>
+        <div class="row justify-content-center">
+           <h6 id="uni_id">Unique ID: 4J8pirLzX6oIF0IIIaUU</h6>
+        </div>
+        <div class="row justify-content-center">
+           <h6 id="name">Name: Adabala Chandu</h6>
+        </div>
+        <div class="row justify-content-center">
+            <h6 id="email">Email: adabala.chandu456@gmail.com</h6>
+        </div>
+        <div class="row justify-content-center">
+            <h6 id="phone">Phone: 8297832000</h6>
+        </div>
+        <div class="row justify-content-center">
+            <h6 id="uidai">Aadhaar Number: 262828197499</h6>
+        </div>
+        <div class="row justify-content-center">
+            <h6 id="from">Heading from: Hyderabad</h6>
+        </div>
+        <div class="row justify-content-center">
+            <h6 id="to">Destination: Wanaparthy</h6>
+        </div>
+        <div class="row justify-content-center">
+            <h6 id="valid">Valid for Date:26-07-2020</h6>
+        </div>
+        <div class="row justify-content-center">
+            <h6 id="warn">You must carry your aadhaar card from identification check</h6>
+        </div>
+        <div class="row justify-content-center">    
+           <button type="button" class="btn btn-danger" onclick="fill()">Download Pass!</button>
+           <div class="col-sm-1"></div>
+           <form action="/virtusa-project/api/home" method="get">
+              <input class="btn btn-danger" type="submit" value="Go Home!" />
+           </form>   
+        </div>
+    </div>
+    <canvas id="myCanvas" width="1000" height="1000" style="border:1px solid #ca1e1e;display:none ;">Your browser does not support the
+        canvas element.</canvas>
+</body>
+<script>
+    function fill() {
+        var canvas = document.getElementById("myCanvas");
+        var head = document.getElementById("head").innerHTML;
+        var id = document.getElementById("uni_id").innerHTML;
+        var name = document.getElementById("name").innerHTML;
+        var email = document.getElementById("email").innerHTML;
+        var phone = document.getElementById("phone").innerHTML;
+        var uidai = document.getElementById("uidai").innerHTML;
+        var from = document.getElementById("from").innerHTML;
+        var to = document.getElementById("to").innerHTML;
+        var valid = document.getElementById("valid").innerHTML;
+        var warn = document.getElementById("warn").innerHTML;
+        var ctx = canvas.getContext("2d");
+        ctx.moveTo(5,5);
+        ctx.lineTo(5,600);
+        ctx.stroke();
+        ctx.moveTo(5,5);
+        ctx.lineTo(995,5);
+        ctx.stroke();
+        ctx.moveTo(5,600);
+        ctx.lineTo(995,600);
+        ctx.stroke();
+        ctx.moveTo(995,5);
+        ctx.lineTo(995,600);
+        ctx.stroke();
+        ctx.font = "30px Arial";
+        ctx.fillText(head,380,50);
+        ctx.fillText(id, 20,150);
+        ctx.fillText(name,20,200);
+        ctx.fillText(email,20,250);
+        ctx.fillText(phone,20,300);
+        ctx.fillText(uidai,20,350);
+        ctx.fillText(from,20,400);
+        ctx.fillText(to,20,450);
+        ctx.fillText(valid,20,500);
+        ctx.fillText(warn,20,550);
+        //canvas.style.display='block';
+        const aurl=canvas.toDataURL();
+        //console.log(aurl);
+        const a=document.createElement("a");
+        document.body.appendChild(a);
+        a.href= canvas.toDataURL();
+        a.download="e-pass.png";
+        a.click();
+        document.body.removeChild(a);
+    }
+</script>
+
+</html>

@@ -1,83 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+import java.sql.Blob;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.InputStream;
+import java.sql.SQLException;
+import java.sql.DriverManager;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author A Chandu
- */
-@WebServlet(urlPatterns = {"/api/sample"})
-public class sample extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.print("from: "+request.getParameter("from"));
-            out.print("to: "+request.getParameter("to"));
-            String s=request.getParameter("date");
-            out.print("\ndate: "+s);
-            
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
-}
+public class sample extends HttpServlet{
+  public void doPost(HttpServletRequest request, HttpServletResponse response) 
+  throws IOException,ServletException {
+            Blob image = null;
+            Connection con = null;
+            Statement stmt = null;
+            ResultSet rs = null;
+            ServletOutputStream out = response.getOutputStream();
+            Connection conn = null;
+		  String url = "jdbc:mysql://localhost:3306/epass";
+		  String driver = "com.mysql.jdbc.Driver";
+		  String userName = "ac43"; 
+		  String password = "chandu456";
+		  try {
+		  Class.forName(driver);
+		  conn = java.sql.DriverManager.getConnection(url,userName,password);
+		  //out.print("Connected to the database");
+                  Statement st = conn.createStatement();
+                  String q="select * from valid where id=\""+request.getParameter("id")+"\"";
+                  rs = st.executeQuery("select uidai_doc from details where uidai_no=\""+request.getParameter("uidai")+"\"");
+                  if (rs.next()) {
+                    image = rs.getBlob(1);
+                  } 
+                  else {
+                    response.setContentType("text/html");
+                    out.println("<html><head><title>Display Blob Example</title></head>");
+                    out.println("<body><h4><font color='red'>image not found for given id</font></h4></body></html>");
+                    return;
+                  }
+                  response.setContentType("image/gif");
+                  InputStream in = image.getBinaryStream();
+                  int length = (int) image.length();
+                  int bufferSize = 1024;
+                  byte[] buffer = new byte[bufferSize];
+                  while ((length = in.read(buffer)) != -1) {
+                    out.write(buffer, 0, length);
+                  }
+                  in.close();
+                  out.flush();
+		  conn.close();
+            }
+                catch(Exception e){
+                    response.setContentType("text/html");
+                    out.println("<html><head><title>Unable To Display image</title></head>");
+                    out.println("<body><h4><font color='red'>Image Display Error=" + e.getMessage() +
+                     "</font></h4></body></html>");
+                }
+            finally {
+            try {
+            rs.close();
+            stmt.close();
+            con.close();
+            } catch (SQLException e) {
+            e.printStackTrace();
+            }
+            }
+  }
+} 

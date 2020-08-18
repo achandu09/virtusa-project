@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/NetBeansProjects/virtusa-project/web/profile.html</file>
-            <file>file:/E:/NetBeansProjects/virtusa-project/src/java/profile.java</file>
+            <file>file:/E:/NetBeansProjects/virtusa-project/src/java/updatecases.java</file>
+            <file>file:/E:/NetBeansProjects/virtusa-project/src/java/admin_home.java</file>
+            <file>file:/E:/NetBeansProjects/virtusa-project/web/home.html</file>
+            <file>file:/E:/NetBeansProjects/virtusa-project/src/java/admin_users.java</file>
+            <file>file:/E:/NetBeansProjects/virtusa-project/src/java/delete.java</file>
             <file>file:/E:/NetBeansProjects/virtusa-project/web/epass.html</file>
-            <file>file:/E:/NetBeansProjects/virtusa-project/src/java/history.java</file>
-            <file>file:/E:/NetBeansProjects/virtusa-project/src/java/login.java</file>
+            <file>file:/E:/NetBeansProjects/virtusa-project/web/register.html</file>
             <file>file:/E:/NetBeansProjects/virtusa-project/src/java/insert.java</file>
         </group>
     </open-files>

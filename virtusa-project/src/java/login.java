@@ -65,12 +65,19 @@ public class login extends HttpServlet {
 		  conn = DriverManager.getConnection(url,userName,password);
 		  //out.print("Connected to the database");
                   Statement st = conn.createStatement();
-                  String q="select pass from details where username = "+"\""+usern+"\"";
+                  String q="select * from details where username = "+"\""+usern+"\"";
                   ResultSet rs=st.executeQuery(q);
                   if(rs.next()){
                       if(userp.equals(rs.getString("pass"))){
                           ses=request.getSession();
                           ses.setAttribute("uname",usern);
+                          if(rs.getBoolean("admin_status")){
+                              ses.setAttribute("isAdmin","true");
+                              response.sendRedirect("admin/home");
+                          }
+                          else{
+                              ses.setAttribute("isAdmin","false");
+                          }
                           response.sendRedirect("home");
                       }
                       else{

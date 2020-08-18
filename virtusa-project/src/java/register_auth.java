@@ -39,8 +39,8 @@ public class register_auth extends HttpServlet {
         String usern=request.getParameter("uname");
         String uidaiNo=request.getParameter("uidai");
         if(usern==null || uidaiNo == null ){
-            out.print("reached here"+usern+" "+uidaiNo+" "+request.getParameter("lname"));
-            //response.sendRedirect("/virtusa-project");
+            //out.print("reached here"+usern+" "+uidaiNo+" "+request.getParameter("lname"));
+            response.sendRedirect("/virtusa-project");
         }
         else{
             Connection conn = null;
@@ -53,14 +53,14 @@ public class register_auth extends HttpServlet {
 		  conn = java.sql.DriverManager.getConnection(url,userName,password);
 		  //out.print("Connected to the database");
                   Statement st = conn.createStatement();
-                  String q="select pass from details where username = "+"\""+usern+"\"";
+                  String q="select * from details where username = \""+usern+"\"";
                   ResultSet rs= st.executeQuery(q);
                   if(rs.next()){
                       response.sendRedirect("/virtusa-project/api/register-failed");
                   }
                   else{
                       Statement st1 = conn.createStatement();
-                      String q1="select pass from details where uidai_no = "+"\""+uidaiNo+"\"";
+                      String q1="select * from details where uidai_no = \""+uidaiNo+"\"";
                       ResultSet rs1= st1.executeQuery(q1);
                       if(rs1.next()){
                           response.sendRedirect("/virtusa-project/api/register-failed");

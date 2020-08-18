@@ -47,6 +47,66 @@
         <servlet-name>feedback</servlet-name>
         <servlet-class>feedback</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>epass_auth</servlet-name>
+        <servlet-class>epass_auth</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admin_home</servlet-name>
+        <servlet-class>admin_home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admin_validate</servlet-name>
+        <servlet-class>admin_validate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admin_cases</servlet-name>
+        <servlet-class>admin_cases</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admin_feedback</servlet-name>
+        <servlet-class>admin_feedback</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admin_administration</servlet-name>
+        <servlet-class>admin_administration</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admin_users</servlet-name>
+        <servlet-class>admin_users</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admin_pases</servlet-name>
+        <servlet-class>admin_pases</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>details</servlet-name>
+        <servlet-class>details</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addadmin</servlet-name>
+        <servlet-class>addadmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getpasses</servlet-name>
+        <servlet-class>getpasses</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updatecases</servlet-name>
+        <servlet-class>updatecases</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>document</servlet-name>
+        <servlet-class>document</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sample</servlet-name>
+        <servlet-class>sample</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>delete</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
         <url-pattern>/api/login</url-pattern>
@@ -98,6 +158,66 @@
     <servlet-mapping>
         <servlet-name>feedback</servlet-name>
         <url-pattern>/api/feedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>epass_auth</servlet-name>
+        <url-pattern>/api/epass/auth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin_home</servlet-name>
+        <url-pattern>/api/admin/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin_validate</servlet-name>
+        <url-pattern>/api/admin/validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin_cases</servlet-name>
+        <url-pattern>/api/admin/cases</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin_feedback</servlet-name>
+        <url-pattern>/api/admin/feedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin_administration</servlet-name>
+        <url-pattern>/api/admin/administration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin_users</servlet-name>
+        <url-pattern>/api/admin/users</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin_pases</servlet-name>
+        <url-pattern>/api/admin/passes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>details</servlet-name>
+        <url-pattern>/api/admin/details</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addadmin</servlet-name>
+        <url-pattern>/api/admin/addadmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getpasses</servlet-name>
+        <url-pattern>/api/admin/getpasses</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updatecases</servlet-name>
+        <url-pattern>/api/admin/updatecases</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>document</servlet-name>
+        <url-pattern>/api/admin/document</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sample</servlet-name>
+        <url-pattern>/api/admin/sample</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/api/admin/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

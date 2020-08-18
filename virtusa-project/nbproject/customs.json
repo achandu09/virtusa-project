@@ -1,6 +1,7 @@
 {
     "elements": {
-        "icon": {}
+        "icon": {},
+        "h5": {}
     },
     "attributes": {
         "integrity": {}

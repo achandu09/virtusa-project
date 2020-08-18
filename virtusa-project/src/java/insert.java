@@ -67,7 +67,7 @@ public class insert extends HttpServlet {
 		  Class.forName(driver);
 		  conn = java.sql.DriverManager.getConnection(url,userName,password);
 		  //out.print("Connected to the database");
-                  PreparedStatement ps = conn.prepareStatement("insert into details values(?,?,?,?,?,?,?,?,?)");
+                  PreparedStatement ps = conn.prepareStatement("insert into details values(?,?,?,?,?,?,?,?,?,?)");
                   ps.setString(1,fname1);
                   ps.setString(2,lname1);
                   ps.setString(3,email1);
@@ -77,7 +77,7 @@ public class insert extends HttpServlet {
                   ps.setString(7,uidai1);
                   ps.setBlob(8, is);
                   ps.setBoolean(9,false);
-                  
+                  ps.setBoolean(10,false);
                   int rc = ps.executeUpdate();
                   if(rc==0){
                       out.print("<h3>Record not insert,Retry</h3>");
@@ -86,6 +86,7 @@ public class insert extends HttpServlet {
                       conn.close();
                       //out.print("inserted");
                       ses.setAttribute("uname", request.getParameter("uname"));
+                      ses.setAttribute("isAdmin","false");
                       response.sendRedirect("/virtusa-project/api/home");
                   }
                   conn.close();

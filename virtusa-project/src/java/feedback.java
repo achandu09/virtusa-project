@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,6 +37,23 @@ public class feedback extends HttpServlet {
         String email=request.getParameter("email");
         String phone=request.getParameter("phone");
         String msg=request.getParameter("message");
+        Date d1=new Date();
+        int date=d1.getDate();
+        int month=(d1.getMonth()+1);
+        int year=(d1.getYear()+1900);
+        String date1=String.valueOf(year)+"-";
+        if(month<10){
+            date1+="0"+String.valueOf(month)+"-";
+        }
+        else{
+            date1+=String.valueOf(month)+"-";
+        }
+        if(date<10){
+            date1+="0"+String.valueOf(date);
+        }
+        else{
+            date1+=String.valueOf(date);
+        }
         if(uname==null || email == null ){
             response.sendRedirect("/virtusa-project");
         }
@@ -49,11 +67,12 @@ public class feedback extends HttpServlet {
 		  Class.forName(driver);
 		  conn = java.sql.DriverManager.getConnection(url,userName,password);
 		  //out.print("Connected to the database");
-                  java.sql.PreparedStatement ps = conn.prepareStatement("insert into feedback values(?,?,?,?)");
+                  java.sql.PreparedStatement ps = conn.prepareStatement("insert into feedback values(?,?,?,?,?)");
                   ps.setString(1,uname);
                   ps.setString(2,email);
                   ps.setString(3,phone);
                   ps.setString(4,msg);
+                  ps.setString(5,date1);
                   ps.executeUpdate();
                   response.sendRedirect("home");
 		  conn.close();

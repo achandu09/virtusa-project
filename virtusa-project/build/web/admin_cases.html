@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Admin Home</title>
+    <link rel="icon" href="../../images/icon17.svg">
+  </head>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><i class="fa fa-quote-left"></i> ePass-Covid <i class="fa fa-quote-right"></i></a>
+        <ul class="font-weight-normal navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home"><i class="fa fa fa-address-card-o"></i> Admin UI<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>  
+        <form action="/virtusa-project/api/logout" method="get" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-danger my-2 my-sm-0" type="submit"><i class="fa fa-sign-out" ></i>Logout</button>
+        </form>
+    </nav>
+    <!--code goes here-->
+    <div class="container p-4">
+          <form id="form_id" method="post" action="details">
+          <div class="row justify-content-center">
+              <div class="col-sm-4">
+                  <label><h5>Area: </h5></label>
+                    <div class="form-group">
+                        <select class="form-control" id="area" name="area" size="1" required>
+                          <option value="Adilabad">Adilabad</option>
+                          <option value="Komaram Bheem">Komaram Bheem</option>
+                          <option value="Bhadradri">Bhadradri</option>
+                          <option value="Hyderabad">Hyderabad</option>
+                          <option value="Jagtial">Jagtial</option>
+                          <option value="Jangaon">Jangaon</option>
+                          <option value="Jayashankar">Jayashankar Bhupalpally</option>
+                          <option value="Jogulamba">Jogulamba Gadwal</option>
+                          <option value="Kamareddy">Kamareddy</option>
+                          <option value="Karimnagar">Karimnagar</option>
+                          <option value="Khammam">Khammam</option>
+                          <option value="Mahabubabad">Mahabubabad</option>
+                          <option value="Mahbubnagar">Mahbubnagar</option>
+                          <option value="Mancherial">Mancherial</option>
+                          <option value="Medak">Medak</option>
+                          <option value="Medchal">Medchal-Malkajgiri</option>
+                          <option value="Mulugu">Mulugu</option>
+                          <option value="NagarKurnool">Nagarkurnool</option>
+                          <option value="Nalgonda">Nalgonda</option>
+                          <option value="Narayanapet">Narayanapet</option>
+                          <option value="Nirmal">Nirmal</option>
+                          <option value="Nizamabad">Nizamabad</option>
+                          <option value="Peddapalli">Peddapalli</option>
+                          <option value="Sircilla">Rajanna Sircilla</option>
+                          <option value="RR">Ranga Reddy</option>
+                          <option value="Sangareddy">Sangareddy</option>
+                          <option value="Siddipet">Siddipet</option>
+                          <option value="Suryapet">Suryapet</option>
+                          <option value="Vikarabad">Vikarabad</option>
+                          <option value="Wanaparthy">Wanaparthy</option>
+                          <option value="Warangal_R">Warangal (Rural)</option>
+                          <option value="Warangal_U">Warangal (Urban)</option>
+                          <option value="Yadadri">Yadadri</option>
+                        </select>
+                    </div>
+              </div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-sm-4">
+                  <label><h5>Total Cases: </h5></label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="total" name="total" placeholder="Total Cases" required>
+                    </div>    
+              </div>              
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-sm-4">
+                  <label><h5>Recovery Cases: </h5></label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="recovery" name="recovery" placeholder="Recovery Cases" required>
+                    </div>    
+              </div>              
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-sm-4">
+                  <label><h5>Total Deaths: </h5></label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="deaths" name="deaths" placeholder="Total Deaths" required>
+                    </div>    
+              </div>              
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-sm-4">
+                  <label><h5>Containment Zone?: </h5></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="containment" id="exampleRadios1" required value="yes">
+                        <label class="form-check-label" >
+                            <h5>Yes</h5>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="containment" id="exampleRadios2" required value="no" checked>
+                        <label class="form-check-label" >
+                            <h5>No</h5>
+                        </label>
+                       </div>
+              </div>    
+          </div>
+          <div class="row justify-content-center"></div>
+              <div class="row justify-content-center">
+                  <div class="col-sm-3">
+                      <br />
+                      <input class="btn btn-danger form-control" onclick="myFun()" type="submit" value="Update Cases!">
+                  </div>
+              </div>
+          </form>
+      </div>
+    <hr class="featurette-divider">
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function myFun() {
+          var area = document.getElementById("area").value;
+          var total = document.getElementById("total").value;
+          var rec = document.getElementById("recovery").value;
+          var death = document.getElementById("deaths").value;
+          var r=confirm(" Area : "+area+"\n Total: "+total+"\n Recovery: "+rec+"\n Deaths: "+death+"\n Are you sure you want update?");
+          if(r==true){
+              document.getElementById("form_id").action="updatecases";
+          }
+          else{
+              document.getElementById("form_id").action="#";
+          }
+        }
+</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
